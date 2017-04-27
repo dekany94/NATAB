@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="NATAB.UsersListPage"
+	Title="Felhasználók" Icon="usersmall.png">
+	
+	<ContentPage.Content>
+
+		<ListView x:Name="listView" Margin="10" HasUnevenRows="true">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+							<Grid>
+
+								<Grid.RowDefinitions >
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+								</Grid.RowDefinitions>
+									
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="180"/>
+								</Grid.ColumnDefinitions>
+									
+								<Label x:Name="lbFullNameDescription" FontSize="15" BackgroundColor="#aab7c4" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Text="Teljesnév: " />
+									<Label x:Name="lbFullName" XAlign="Center" FontSize="25" BackgroundColor="#aab7c4" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" Text="{Binding FullName}" />
+
+								<Label x:Name="lbFormattedAddressDescription" FontSize="15" Grid.Row="1" Grid.Column="0" Text="Tartózkodás: " />
+									<Label x:Name="lbFormattedAddress" XAlign="Center" Grid.Row="1" FontSize="13" Grid.Column="1" Text="{Binding FormattedAddress}" />
+
+								<Label x:Name="lbAge" FontSize="15" Grid.Row="2" Grid.Column="0" Text="{Binding Age}" />
+
+								
+<!--									<Label x:Name="lbAge" XAlign="Center" FontSize="15" FontAttributes="Bold" Grid.Row="2" Grid.Column="1" Text="{Binding Age}" />-->
+
+								<Label x:Name="lbGendre" XAlign="Center" FontSize="15" Grid.Row="2" Grid.Column="1" Text="{Binding Gendre}" />
+<!--									<Label x:Name="lbGendre" XAlign="Center" FontSize="15" Grid.Row="3" Grid.Column="1" Text="{Binding Gendre}" />-->
+
+								<Label x:Name="lbNationalityDescription" FontSize="15" Grid.Row="3" Grid.Column="0" Text="Nemzetiség: " />
+									<Label x:Name="lbNationality" XAlign="Center" FontSize="15" Grid.Row="3" Grid.Column="1" Text="{Binding Nationality}" />
+									
+								<Label x:Name="lbRegDateDescription" FontSize="15" Grid.Row="4" Grid.Column="0" Text="Regisztráció: " />
+									<Label x:Name="lbRegDate" XAlign="Center" FontSize="11" Grid.Row="4" Grid.Column="1" Text="{Binding RegDate}" />
+
+							</Grid>
+
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+
+	</ContentPage.Content>
+</ContentPage>

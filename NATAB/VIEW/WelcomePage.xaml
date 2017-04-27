@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="NATAB.WelcomePage"
+	Title="Üdvözöljük a Natab alkalmazásban!">
+	<ContentPage.Content>
+
+		<ScrollView>
+			<StackLayout x:Name="sl" Spacing="20" Padding="20" VerticalOptions="Center">
+
+			<Image 	x:Name="imgWorld"
+					Source="world.png"
+					IsVisible="true"
+					HorizontalOptions="Start" />
+				
+			<Button x:Name="btLogIn"
+					Text="Bejelentkezés"
+					BackgroundColor="Silver"
+					Clicked="btLogIn_Clicked" />
+
+			<Button x:Name="btSignUp"
+					Text="Regisztráció"
+					BackgroundColor="Silver"
+					Clicked="btSignUp_Clicked"/>
+
+			<Label  x:Name="lbDescription"
+					Margin="20, 25, 20, 20"
+					HorizontalTextAlignment="Center" 
+					FontSize = "15"
+					TextColor="#919191"
+					Text="Rövid leírás: Ezzel a telefonos alkalmazással, könnyen, gyorsan rátalálhatsz azokra az emberekre akikkel találkozni szeretnél. Különböző szűréseket tesz lehetővé megkönnyítve ezzel a keresés folyamatát." />
+				
+			</StackLayout>
+		</ScrollView>
+
+	</ContentPage.Content>
+</ContentPage>

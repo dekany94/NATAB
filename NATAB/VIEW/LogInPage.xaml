@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="NATAB.LogInPage"
+	Title="Natab Bejelentkezési oldal">
+	<ContentPage.Content>
+
+		<ScrollView>
+		
+			<StackLayout Spacing="20" Padding="20"
+	                       	VerticalOptions="Center">
+				
+					<Label  x:Name="lbWelcome"
+							Margin="20, 20, 20, 35"
+						   	HorizontalTextAlignment="Center" 
+						   	FontSize = "20"
+							TextColor="#919191"
+						   	Text="Bejelentkezés a NATAB alkalmazásba" />
+
+	                <Entry 	x:Name="eUserName"
+							Placeholder="Felhasználónév"
+	                       	Text="{Binding Username}"/>
+				
+	                <Entry 	x:Name="ePassword"
+							Placeholder="Jelszó"
+	                       	Text="{Binding Password}"
+	                       	IsPassword="true"/>
+
+					<Label  x:Name="emValidPassword"
+						   	HorizontalTextAlignment="Center" 
+						   	FontSize = "15"
+							TextColor="Red"
+							IsVisible="false"
+						   	Text="Érvénytelen jelszó! A minimum 8 karakternek tartalmaznia kell betűt és számot!" />
+				
+<!--				Ilyen felhasználó nem létezik, vagy helytelen felhasználónév, jelszó lett megadva!-->
+				
+	                <Button x:Name="btLogIn"
+							Text="Bejelentkezés" TextColor="White"
+	                        BackgroundColor="#77D065"
+	                        Command="{Binding LoginCommand}"
+							Clicked="btLogIn_Clicked"/>
+				
+					<Label  x:Name="lbDescription"
+							Margin="20, 35, 20, 20"
+						   	HorizontalTextAlignment="Center" 
+						   	FontSize = "15"
+							TextColor="#919191"
+						   	Text="Rövid leírás: Ezzel a telefonos alkalmazással, könnyen, gyorsan rátalálhatsz azokra az emberekre akikkel találkozni szeretnél. Különböző szűréseket tesz lehetővé megkönnyítve ezzel a keresés folyamatát." />
+
+					<Button x:Name="tbBack"
+							Text="Vissza" 
+							TextColor="#919191"
+							HorizontalOptions="Start"
+	                        Clicked="tbBack_Clicked" />
+	        </StackLayout>
+		</ScrollView>
+		
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="NATAB.FilterPage"
+	Title="Szűrés" Icon="filtersmall.png">
+
+	<ContentPage.Content>
+
+		<ScrollView x:Name="view">
+	        <StackLayout Spacing="20" Padding="20"
+                       	VerticalOptions="Center">
+
+						<Label  x:Name="lbInform"
+						Margin="10, 10, 10, 25"
+					   	HorizontalTextAlignment="Center" 
+					   	FontSize = "15"
+						TextColor="#919191"
+					   	Text="Ezen az oldalon szűrési feltételeket adhat meg, ami alapján szűkítheti a találatok számát." />
+
+				<Grid><!--START AGE-->
+					<Grid.RowDefinitions >
+						<RowDefinition Height="Auto"/>
+	
+					</Grid.RowDefinitions>
+									
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>						
+					</Grid.ColumnDefinitions>
+
+					<Label x:Name="lbAgeFrom" Text="Kor (-tól):" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+					<Picker x:Name="pickAgeFrom" Grid.Row="0" Grid.Column="1" Title="Kor" HorizontalOptions="Center" WidthRequest="50">
+				        <Picker.Items>
+				        </Picker.Items>
+				    </Picker> 
+
+					
+					<Label x:Name="lbAgeTo" Text="Kor (-ig):" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+					<Picker x:Name="pickAgeTo" Grid.Row="0" Grid.Column="3" Title="Kor" HorizontalOptions="Center" WidthRequest="50">
+				        <Picker.Items>
+				        </Picker.Items>
+				    </Picker>
+					
+				</Grid><!--END AGE-->
+
+
+				<Grid><!--START GENDRE & NATIONALITY-->
+					<Grid.RowDefinitions >
+						<RowDefinition Height="Auto"/>
+	
+					</Grid.RowDefinitions>
+									
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+
+				
+					<!--START GENDRE-->
+					<Label x:Name="lbGendre" WidthRequest="50" Text="Férfi" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+					<Switch x:Name="swGendre" IsToggled="false" Toggled="swGendre_Toggled" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="End"/>
+					<!--END GENDRE-->
+
+					<!--NEMZETISÉG-->
+					<Picker x:Name="pickNationality" Grid.Row="0" Grid.Column="2" Title="Nemzetiség" HorizontalOptions="Center" WidthRequest="170">
+				        <Picker.Items>
+				        </Picker.Items>
+				    </Picker> 
+					<!--END NEMZETISÉG-->
+			    
+			    </Grid><!--START GENDRE & NATIONALITY-->
+
+
+				
+				
+				<Grid><!--START UT INFORM-->
+					<Grid.RowDefinitions >
+						<RowDefinition Height="Auto"/>
+	
+					</Grid.RowDefinitions>
+									
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+
+					<Label  x:Name="lbUserTypeInform"
+						Grid.Row="0"
+						Grid.Column="0"
+					   	HorizontalTextAlignment="Start"
+						VerticalOptions="Center"
+					   	FontSize = "15"
+						TextColor="#919191"
+					   	Text="Felhasználó típúsok szűrése." />
+
+				<Switch x:Name="swUserTypesVisible" Margin="5, 0, 0, 0" IsToggled="false" Toggled="swUserTypesVisible_Toggled" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+					
+				</Grid><!--END UT INFORM-->
+
+				
+				<Grid x:Name="gUserTypes" IsVisible="false"><!--START USERTYPES-->
+				  <Grid.RowDefinitions>
+				    <RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+				    <RowDefinition Height="*" />
+				  </Grid.RowDefinitions>
+				  <Grid.ColumnDefinitions>
+				    <ColumnDefinition Width="*" />
+				    <ColumnDefinition Width="50" />	
+				  </Grid.ColumnDefinitions>
+					
+				  <Label x:Name="lbAltIsm" Text="Általános ismerkedés" Grid.Row="0" Grid.Column="0" />
+				  <Switch x:Name="swAltIsm" IsToggled="false" Grid.Row="0" Grid.Column="1" />
+					
+				  <Label Text="Randi" Grid.Row="1" Grid.Column="0" />
+				  <Switch x:Name="swRandi" IsToggled="false" Grid.Row="1" Grid.Column="1" />
+
+				  <Label Text="Barátkozás" Grid.Row="2" Grid.Column="0" />
+				  <Switch x:Name="swBaratkozas" IsToggled="false" Grid.Row="2" Grid.Column="1" />
+					
+				  <Label Text="Szabadidős partner" Grid.Row="3" Grid.Column="0" />
+				  <Switch x:Name="swSzabadidosPartner" IsToggled="false" Grid.Row="3" Grid.Column="1" />
+					
+				  <Label Text="Kirándulás/Szabadtéri" Grid.Row="4" Grid.Column="0" />
+				  <Switch x:Name="swKirandulas" IsToggled="false" Grid.Row="4" Grid.Column="1" />					
+					
+				  <Label Text="Sport" Grid.Row="5" Grid.Column="0" />
+				  <Switch x:Name="swSport" IsToggled="false" Grid.Row="5" Grid.Column="1" />
+					
+				  <Label Text="Extrém tevékenység" Grid.Row="6" Grid.Column="0" />
+				  <Switch x:Name="swExtrem" IsToggled="false" Grid.Row="6" Grid.Column="1" />
+					
+				  <Label Text="Felfedezés, kaland, új helyek" Grid.Row="7" Grid.Column="0" />
+				  <Switch x:Name="swFelfedez" IsToggled="false" Grid.Row="7" Grid.Column="1" />
+					
+				</Grid><!--END USERTYPES-->
+
+
+				<Button x:Name="tbFilter"
+					Text="Szűrés" 
+					TextColor="White"
+	                BackgroundColor="#77D065"
+					Clicked="tbFilter_Clicked" />
+				
+			</StackLayout>
+		</ScrollView>
+		
+	</ContentPage.Content>
+	
+</ContentPage>

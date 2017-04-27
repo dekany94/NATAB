@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:Natab="clr-namespace:NATAB;assembly=NATAB"
+            x:Class="NATAB.MainTabbedPage"
+			Title="Felhasználók keresése" >
+    <TabbedPage.Children >
+
+    	<Natab:FilterPage />
+		<Natab:UsersListPage />
+        <Natab:MapPage />
+		
+
+
+    </TabbedPage.Children>
+</TabbedPage>
