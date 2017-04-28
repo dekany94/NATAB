@@ -81,11 +81,11 @@
     </Compile>
     <Compile Include="MODEL\cl_FilterUsers.cs" />
     <Compile Include="MODEL\GlobalClass.cs" />
-    <Compile Include="VM\UserListPageVM.cs" />
-    <Compile Include="VM\LogInPageVM.cs" />
-    <Compile Include="VM\AppConstants.cs" />
-    <Compile Include="VM\SignUpPageVM.cs" />
     <Compile Include="MODEL\JsonClass.cs" />
+    <Compile Include="METHODS\AppConstants.cs" />
+    <Compile Include="METHODS\LogInPageM.cs" />
+    <Compile Include="METHODS\SignUpPageM.cs" />
+    <Compile Include="METHODS\UserListPageM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCLRaw.core">
@@ -124,7 +124,7 @@
     <Folder Include="MODEL\" />
     <Folder Include="VIEW\" />
     <Folder Include="DATABASE\" />
-    <Folder Include="VM\" />
+    <Folder Include="METHODS\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

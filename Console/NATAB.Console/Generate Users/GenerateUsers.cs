@@ -86,7 +86,7 @@ namespace NATAB
 			}
 
 
-			//Kiíratás
+			//Formázás
 			for (int k = 0; k < NumberOfUserTypes; k++)
 			{
 				if (Result != string.Empty)

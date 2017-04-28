@@ -296,24 +296,6 @@ namespace NATAB
 
 			return NationalityName;
 		}
-
-		//public static GlobalClass Contains_UserTypeIds(GlobalClass CurrentItem, string pUserTypeIds, string pFilterUTIds)
-		//{
-		//	string[] MaintUTIds = pUserTypeIds.Split(',');
-		//	string[] FilterUTIds = pFilterUTIds.Split(',');
-
-		//	foreach (var item in FilterUTIds)
-		//	{
-		//		if (MaintUTIds.Contains(item))
-		//			break;
-		//	}
-
-		//	//var s = (from MU in MaintUTIds
-		//	//		 where MaintUTIds == FilterUTIds
-		//	//		 select MU).ToList();
-
-		//	return "sds";
-		//}
 		#endregion
 
 
