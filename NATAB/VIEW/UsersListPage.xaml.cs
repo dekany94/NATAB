@@ -27,16 +27,18 @@ namespace NATAB
 		{
 			base.OnAppearing();
 
+			//FilterClass feltöltése a statikus osztályból
 			FilterClass = MainTabbedPage.cfu;
 
-
+			//Felhasználók lekérdezése adatbázisból
 			List<tbl_Users> qUsersDataList = null;
 			qUsersDataList = await App.Database.Get_All_tbl_Users_Async();
 
+			//Helyzetek lekérdezése adatbázisból
 			List<tbl_Locations> qLocationsDataList = null;
 			qLocationsDataList = await App.Database.Get_All_tbl_Locations_Async();
 
-
+			//Két DataSet összekapcsolása
 			if ((qUsersDataList != null) && (qLocationsDataList != null))
 			{
 				//Új GlobalClass collection létrehozása, Id-k kovertálása ember által értelmezhető szöveggé, + egyéb foqLocationsDataListnTabbedPage.GlobalClassList = 

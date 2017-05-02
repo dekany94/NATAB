@@ -24,20 +24,29 @@ namespace NATAB
 
 		public async void btLogIn_Clicked(object sender, System.EventArgs e)
 		{
-			//Ha autentikálva van
+			emValidLogin.IsVisible = false;
 
 			List<tbl_Users> Users = await App.Database.Get_All_tbl_Users_Async();
 
+			//Ellenőrizzük, hogy a mezők kivannak-e töltve
+			if ((eUserName.Text != string.Empty && eUserName.Text != null) &&
+			   ePassword.Text != string.Empty && ePassword.Text != null)
+			{
+				//Ellenőrizzük, hogy létező felhasználó-e helyes jelszóval
+				if (await IsValidUser(Users, eUserName.Text, ePassword.Text))
+				{
+					//Ha igen (autentikálva van) beléptetem a főoldalra
+					App.Set_NavBar(new MainTabbedPage());
+				}
+				else
+				{
+					emValidLogin.IsVisible = true;
+					//"Ilyen felhasználó nem létezik, vagy helytelen felhasználónév, jelszó lett megadva!";
+				}
+			}
 
-			if (await ValidUserName(Users, eUserName.Text, ePassword.Text))
-			{
-				//Application.Current.MainPage = App.Set_NavBar(new MainTabbedPage());
-				App.Set_NavBar(new MainTabbedPage());
-			}
-			else
-			{
-				//"Ilyen felhasználó nem létezik, vagy helytelen felhasználónév, jelszó lett megadva!";
-			}
+
+
 
 
 

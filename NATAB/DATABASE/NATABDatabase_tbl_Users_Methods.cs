@@ -26,17 +26,6 @@ namespace NATAB
 			return Database.Table<tbl_Users>().Where(i => i.UserId == pUserId).FirstOrDefaultAsync();
 		}
 
-		public Task<tbl_Users> Login_Users_Async(string pUserName, string pPassword)
-		{
-			return Database.Table<tbl_Users>().Where((i => i.UserName == pUserName && i.Password == pPassword)).FirstOrDefaultAsync();
-		}
-
-		//public Task<List<tbl_Users>> Get_Filtered_Item_tbl_Users_Async(cl_FilterUsers pFilter)
-		//{
-		//	return Database.Table<tbl_Users>().ToListAsync();
-		//}
-
-
 		/// <summary>
 		/// Saves the item tbl users async. - Update & Insert depend on UserId
 		/// </summary>

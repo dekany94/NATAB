@@ -8,7 +8,7 @@ namespace NATAB
 	public partial class LogInPage
 	{
 		
-		public async Task<bool> ValidUserName(List<tbl_Users> List, string pUserName, string pPassword)
+		public async Task<bool> IsValidUser(List<tbl_Users> List, string pUserName, string pPassword)
 		{
 			bool ValidUser = false;
 			var s = (from u in List

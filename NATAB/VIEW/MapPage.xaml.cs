@@ -42,14 +42,13 @@ namespace NATAB
 			{
 				foreach (GlobalClass item in MainTabbedPage.GlobalClassList)
 				{
-				// Pin Declaration
+					// Pin Declaration
 					var position = new Position(item.Latitude, item.Longitude); // Latitude, Longitude
 					var pin = new Pin
 					{
 						Type = PinType.Place,
 						Position = position,
 						Label = String.Format("{0} - {1} éves, ({2})",item.FullName, item.Age, AppConstants.GendreToString(item.Gendre)),  
-						//AppConstants.dCultures.FirstOrDefault(x => x.Value == item.NationalityId).Key,
 						Address = item.FormattedAddress
 					};
 

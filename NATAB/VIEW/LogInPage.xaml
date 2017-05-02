@@ -32,9 +32,15 @@
 							TextColor="Red"
 							IsVisible="false"
 						   	Text="Érvénytelen jelszó! A minimum 8 karakternek tartalmaznia kell betűt és számot!" />
+
+					<Label  x:Name="emValidLogin"
+						   	HorizontalTextAlignment="Center" 
+						   	FontSize = "15"
+							TextColor="Red"
+							IsVisible="false"
+						   	Text="Ilyen felhasználó nem létezik, vagy helytelen felhasználónév, jelszó lett megadva!" />
 				
-<!--				Ilyen felhasználó nem létezik, vagy helytelen felhasználónév, jelszó lett megadva!-->
-				
+
 	                <Button x:Name="btLogIn"
 							Text="Bejelentkezés" TextColor="White"
 	                        BackgroundColor="#77D065"

@@ -36,11 +36,7 @@
 
 								<Label x:Name="lbAge" FontSize="15" Grid.Row="2" Grid.Column="0" Text="{Binding Age}" />
 
-								
-<!--									<Label x:Name="lbAge" XAlign="Center" FontSize="15" FontAttributes="Bold" Grid.Row="2" Grid.Column="1" Text="{Binding Age}" />-->
-
 								<Label x:Name="lbGendre" XAlign="Center" FontSize="15" Grid.Row="2" Grid.Column="1" Text="{Binding Gendre}" />
-<!--									<Label x:Name="lbGendre" XAlign="Center" FontSize="15" Grid.Row="3" Grid.Column="1" Text="{Binding Gendre}" />-->
 
 								<Label x:Name="lbNationalityDescription" FontSize="15" Grid.Row="3" Grid.Column="0" Text="Nemzetiség: " />
 									<Label x:Name="lbNationality" XAlign="Center" FontSize="15" Grid.Row="3" Grid.Column="1" Text="{Binding Nationality}" />
