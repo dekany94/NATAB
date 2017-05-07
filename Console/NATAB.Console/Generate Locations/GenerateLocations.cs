@@ -8,6 +8,11 @@ namespace NATAB
 	public static class GenerateLocations
 	{
 
+		/// <summary>
+		/// Generates the tbl location records. - tbl_Location tábla rekordjainak generálása, a paraméterben kapot koordináta típusú lista alapján
+		/// </summary>
+		/// <returns>The tbl location records.</returns>
+		/// <param name="pCoordinates">P coordinates.</param>
 		public static List<tbl_Locations> Generate_tbl_Location_Records(List<Coordinate> pCoordinates)
 		{
 			List<tbl_Locations> Locations = new List<tbl_Locations>();
@@ -15,15 +20,18 @@ namespace NATAB
 
 			foreach (Coordinate CoordItem in pCoordinates)
 			{
+				//Location rekord létrehozása
 				tbl_Locations Location = new tbl_Locations();
 
 				//Call methods osztály példányosítása, CallMethods = Call WebRequiest, Call Deserialization
 				CallMethods cm = new CallMethods(CoordItem.Latitude, CoordItem.Longitude);
 				//CallMethods cm = new CallMethods(latitude, longitude);
 
+				//Json osztály rootObject példányosítása, inicializálása
 				JsonClass.RootObject RootObject = cm.Get_Root_Object();
 
-
+				//Az érkezett Json objektum, státuszának ellenőrzése, ha ok csak akkor kezdjük el feldolgozni az adatokat
+				//Adattagok feltöltése
 				if (RootObject.status == "OK")
 				{
 
@@ -38,6 +46,7 @@ namespace NATAB
 					Location.Latitude = (double)Item0.geometry.location.lat;
 					Location.Longitude = (double)Item0.geometry.location.lng;
 
+					//Fastruktúra szintjeinek vizsgálata, az IndexOutOfRange Exception kikerülésének garantálása
 					//0. elem bejárása, adatok kigyüjtése
 					for (int i = 0; i<Item0.address_components.Count; i++)
 					{

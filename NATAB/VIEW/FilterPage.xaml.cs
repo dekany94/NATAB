@@ -232,7 +232,9 @@ namespace NATAB
 			return UserTypeIds;
 		}
 
-
+		/// <summary>
+		/// Resets the user types switches. - Kapcsolók alaphelyzetbe állítása
+		/// </summary>
 		public void Reset_UserTypes_Switches()
 		{
 			swAltIsm.IsToggled = false;
@@ -247,7 +249,11 @@ namespace NATAB
 
 		}
 
-
+		/// <summary>
+		/// Sws the user types visible toggled. - Felhasználótípusok szűrés megjelenítése, kapcsoló állás függvényében
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="e">E.</param>
 		void swUserTypesVisible_Toggled(object sender, Xamarin.Forms.ToggledEventArgs e)
 		{
 			if (swUserTypesVisible.IsToggled)

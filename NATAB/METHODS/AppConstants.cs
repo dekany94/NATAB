@@ -22,6 +22,7 @@ namespace NATAB
 		//	{"swFelfedez", 8}						//"Felfedezés, kaland, új helyek"},	//Discover city/new places
 		//};
 
+		//Enum típusú felsorolás a kapcsolók azonosításához
 		public enum UserTypes : int
 		{
 			swAltIsm = 1,
@@ -34,7 +35,11 @@ namespace NATAB
 			swFelfedez = 8
 		}
 
-
+		/// <summary>
+		/// Is the user type identifier. -  Kapcsoló értékek lekérdezése, UserTypes enum típusú paraméter alapján
+		/// </summary>
+		/// <returns>The user type identifier.</returns>
+		/// <param name="pUserTypeId">P user type identifier.</param>
 		public static string iUserTypeId(UserTypes pUserTypeId)
 		{
 			int rId = 0;
@@ -53,6 +58,11 @@ namespace NATAB
 			return rId.ToString();
 		}
 
+		/// <summary>
+		/// Get the user type identifier. - UserTypes enum lekérdezése id (integer) alapján
+		/// </summary>
+		/// <returns>The user type identifier.</returns>
+		/// <param name="pUserTypeId">P user type identifier.</param>
 		public static UserTypes sUserTypeId(int pUserTypeId)
 		{
 			UserTypes rId = 0;
@@ -71,7 +81,9 @@ namespace NATAB
 			return rId;
 		}
 
-
+		/// <summary>
+		/// The d cultures. - Nemzetiségek tárolására szolgáló Dictionary
+		/// </summary>
 		public static Dictionary<string, int> dCultures = new Dictionary<string, int>
 		{
 			{"Albania" , 1},

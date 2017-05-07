@@ -8,7 +8,9 @@ namespace NATAB
 
 	class MainClass
 	{
+		//SQLite adatbázis létrehozása
 		static NATABDatabase DB_Generated;
+		//Lokális gépen, adatbázis elérési útvonalának definiálása
 		static string dbPath = "/Users/dekany/Desktop/generated_database/NATABSQLite_old.db3";
 
 		public static NATABDatabase Database_Generated
@@ -23,6 +25,9 @@ namespace NATAB
 			}
 		}
 
+		//A main függvényt két lépésben kell lefuttatni. 
+		//1. lépés Location generálás -> paraméter beállítása: rekordszám
+		//2. Felhasználó generálás -> paraméterek beállítása: rekordszám, férfi/nő
 		public static void Main(string[] args)
 		{
 			//************************************************************************************

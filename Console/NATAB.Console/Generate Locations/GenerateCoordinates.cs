@@ -8,8 +8,6 @@ namespace NATAB
 
 	public class GenerateCoordinates
 	{
-		//List<tbl_Locations> pLocationsList = new List<tbl_Locations>();
-
 		private Coordinate[] Calculate(int NumberOfRecord, Coordinate location1, Coordinate location2, Coordinate location3, Coordinate location4)
 		{
 			Coordinate[] allCoords = { location1, location2, location3, location4 };
@@ -68,6 +66,12 @@ namespace NATAB
 		static List<Coordinate> List = new List<Coordinate>();
 		static EuropePoints EU = new EuropePoints();
 
+		/// <summary>
+		/// Generate the specified pNumberOfRecords and pGC. - Koordináta típusú listával tér vissza
+		/// </summary>
+		/// <returns>The generate.</returns>
+		/// <param name="pNumberOfRecords">P number of records.</param>
+		/// <param name="pGC">P gc.</param>
 		public static List<Coordinate> Generate(int pNumberOfRecords, GenerateCoordinates pGC)
 		{
 			var generatedCordArray = pGC.Calculate(pNumberOfRecords, EU.TopLeftCoord, EU.TopRightCoord, EU.BottomLeftCoord, EU.BottomRightCoord);
@@ -92,7 +96,10 @@ namespace NATAB
 
 
 
-
+		/// <summary>
+		/// Shows the content of the the. - Kiíratást végzi, generáláskor nincs használva
+		/// </summary>
+		/// <param name="pList">P list.</param>
 		public static void Show_the_Content(List<Coordinate> pList)
 		{
 			Console.WriteLine("***********************Lista tartalma: ************************\n");

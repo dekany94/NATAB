@@ -49,7 +49,7 @@ namespace NATAB
 
 			List<tbl_Users> UsersList = User.ToList();
 
-
+			//Idegen kulcs referencia biztosítása, legmagasabb Id lekérdezése
 			int i = Database.Get_Max_UserId_Async();
 
 			foreach (tbl_Users item in UsersList)
@@ -57,22 +57,30 @@ namespace NATAB
 				item.LocationId = i+1;
 			}
 
-
+			//Felhasználó rekord elmentése
 			Database.Save_List_tbl_Users_Async(UsersList);
 
 		}
 
+
+		/// <summary>
+		/// Generates the random user types. - Felhasználótípusok generálása, (minden új felhasználó létrehozásakor meghívódik)
+		/// </summary>
+		/// <returns>The random user types.</returns>
+		/// <param name="rnd">Random.</param>
 		public static string Generate_Random_UserTypes(Random rnd)
 		{
 			string Result = string.Empty;
 
 			//Random rnd = new Random();
 
+			//Generálandó szám meghatározása, a for ciklus határa - (Hány random számot generáljon a függvény) - 1-8 között vehet fel értéket
+			//Int típusú tömb deklarálása, memória allokálás
 			int NumberOfUserTypes = rnd.Next(1, 8+1);
 			int[] UserTypesIntArray = new int[NumberOfUserTypes];
 
 
-
+			//A random számok generálása
 			for (int i = 0; i < NumberOfUserTypes; i++)
 			{
 				int szam = rnd.Next(1, 8+1);
@@ -86,7 +94,7 @@ namespace NATAB
 			}
 
 
-			//Formázás
+			//Formázás: a generált számokat vesszővel szeparálom és egy stringet adok vissza
 			for (int k = 0; k < NumberOfUserTypes; k++)
 			{
 				if (Result != string.Empty)

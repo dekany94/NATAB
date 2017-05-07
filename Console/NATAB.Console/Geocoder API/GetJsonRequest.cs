@@ -18,11 +18,12 @@ namespace NATAB
 
 		public string Get_Json_From_Server_Request()
 		{
-
+			//Generált API key
 			string APIKey = "AIzaSyCrI37okwtB10wFb_RkZqOAkVAlBWyHlqw";
 			//https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
-
 			//https://maps.googleapis.com/maps/api/geocode/json?latlng=46.9061800,19.6912800&sensor=true&key=AIzaSyCrI37okwtB10wFb_RkZqOAkVAlBWyHlqw
+
+			//A lekérdezni kívánt url összeállítása
 			String URL = string.Format("https://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&sensor=true&key={2}",
 									   latitude, longitude, APIKey);
 			// Create a request for the URL.   

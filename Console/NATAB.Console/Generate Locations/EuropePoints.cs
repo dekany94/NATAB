@@ -1,6 +1,7 @@
 ﻿using System;
 namespace NATAB
 {
+	// 4, országot (koordinátákat) tartalmazó osztály
 	public class EuropePoints
 	{
 		//Hollandia
